@@ -478,7 +478,7 @@ public class CodeGenerator {
     }
 
     private Stack<Address> getAddressStack() {
-        return generatorData.getSs();
+        return generatorData.getAddressStack();
     }
 
     private Stack<String> getSymbolStack() {
