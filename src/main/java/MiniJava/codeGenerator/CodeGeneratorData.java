@@ -1,7 +1,9 @@
 package MiniJava.codeGenerator;
 
+import MiniJava.scanner.token.Token;
 import MiniJava.semantic.symbol.SymbolTable;
 import lombok.Getter;
+import lombok.Setter;
 
 import java.util.Stack;
 
@@ -13,6 +15,9 @@ public class CodeGeneratorData {
     private final Stack<String> symbolStack = new Stack<>();
     private final Stack<String> callStack = new Stack<>();
     private final SymbolTable symbolTable;
+
+    @Setter
+    private Token token;
 
     public CodeGeneratorData() {
         symbolTable = new SymbolTable(memory);
