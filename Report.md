@@ -5,4 +5,7 @@
 
 # 2: Separate Query from Modifier
 در کلاس `Memory` متود `getTemp()` را به دو متود getTemp و updateTempIndex شکستیم.
+همچنین برای متود `getDateAddress` نیز چنین کردیم.
 
+# 3: Self-Encapsulated Field
+در همان کلاس برای فیلد codeblock یک protected getter اضافه کردیم و در دیگر قسمت‌های کلاس از آن استفاده نمودیم.
