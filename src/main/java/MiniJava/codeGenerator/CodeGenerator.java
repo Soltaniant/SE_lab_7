@@ -17,20 +17,6 @@ public class CodeGenerator {
 
     private final CodeGeneratorData generatorData = new CodeGeneratorData();
 
-    @Getter
-    public static class CodeGeneratorData {
-
-        private Memory memory = new Memory();
-        private final Stack<Address> ss = new Stack<Address>();
-        private final Stack<String> symbolStack = new Stack<>();
-        private final Stack<String> callStack = new Stack<>();
-        private final SymbolTable symbolTable;
-
-        public CodeGeneratorData() {
-            symbolTable = new SymbolTable(memory);
-        }
-    }
-
     public void printMemory() {
         getMemory().pintCodeBlock();
     }
