@@ -9,9 +9,6 @@ import MiniJava.semantic.symbol.SymbolType;
 
 import java.util.Stack;
 
-/**
- * Created by Alireza on 6/27/2015.
- */
 public class CodeGenerator {
 
     private final CodeGeneratorData generatorData = new CodeGeneratorData();
@@ -135,9 +132,6 @@ public class CodeGenerator {
         getSymbolStack().push(methodName);
     }
 
-    //    public void spid(Token next){
-//        getSymbolStack().push(next.value);
-//    }
     public void checkID() {
         getSymbolStack().pop();
         if (getAddressStack().peek().varType == varType.Non) {
@@ -275,14 +269,11 @@ public class CodeGenerator {
     public void assign() {
         Address s1 = getAddressStack().pop();
         Address s2 = getAddressStack().pop();
-//        try {
+
         if (s1.varType != s2.varType) {
             ErrorHandler.printError("The type of operands in assign is different ");
         }
-//        }catch (NullPointerException d)
-//        {
-//            d.printStackTrace();
-//        }
+
         getMemory().add3AddressCode(Operation.ASSIGN, s1, s2, null);
     }
 
