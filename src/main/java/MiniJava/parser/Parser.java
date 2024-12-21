@@ -1,16 +1,17 @@
 package MiniJava.parser;
 
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Stack;
 
 import MiniJava.Log.Log;
 import MiniJava.codeGenerator.CodeGenerator;
 import MiniJava.errorHandler.ErrorHandler;
+import MiniJava.filereader.FileReader;
 import MiniJava.scanner.lexicalAnalyzer;
 import MiniJava.scanner.token.Token;
+
+import static MiniJava.filereader.FileReader.readLines;
 
 public class Parser {
     private ArrayList<Rule> rules;
@@ -23,13 +24,13 @@ public class Parser {
         parsStack = new Stack<Integer>();
         parsStack.push(0);
         try {
-            parseTable = new ParseTable(Files.readAllLines(Paths.get("src/main/resources/parseTable")).get(0));
+            parseTable = new ParseTable(FileReader.readLines("parserTable").get(0));
         } catch (Exception e) {
             e.printStackTrace();
         }
         rules = new ArrayList<Rule>();
         try {
-            for (String stringRule : Files.readAllLines(Paths.get("src/main/resources/Rules"))) {
+            for (String stringRule : readLines("Rules")) {
                 rules.add(new Rule(stringRule));
             }
         } catch (IOException e) {
@@ -38,8 +39,8 @@ public class Parser {
         cg = new CodeGenerator();
     }
 
-    public void startParse(java.util.Scanner sc) {
-        lexicalAnalyzer = new lexicalAnalyzer(sc);
+    public void startParse(String input) {
+        lexicalAnalyzer = new lexicalAnalyzer(input);
         Token lookAhead = lexicalAnalyzer.getNextToken();
         boolean finish = false;
         Action currentAction;

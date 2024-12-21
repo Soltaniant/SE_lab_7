@@ -1,9 +1,8 @@
 package MiniJava;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.Scanner;
+import java.io.IOException;
 
 import MiniJava.errorHandler.ErrorHandler;
+import MiniJava.filereader.FileReader;
 import MiniJava.parser.Parser;
 
 
@@ -12,8 +11,8 @@ public class Main {
         Parser parser = new Parser();
         try {
             // start parsing
-            parser.startParse(new Scanner(new File("src/main/resources/code")));
-        } catch (FileNotFoundException e) {
+            parser.startParse(FileReader.readAsString("code"));
+        } catch (IOException e) {
             ErrorHandler.printError(e.getMessage());
         }
     }
