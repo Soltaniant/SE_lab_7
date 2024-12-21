@@ -17,14 +17,6 @@ public class CodeGenerator {
 
     private final CodeGeneratorData generatorData = new CodeGeneratorData();
 
-    public void printMemory() {
-        getMemory().pintCodeBlock();
-    }
-
-    private Memory getMemory() {
-        return generatorData.getMemory();
-    }
-
     public void semanticFunction(int func, Token next) {
         Log.print("codegenerator : " + func);
         switch (func) {
@@ -144,14 +136,6 @@ public class CodeGenerator {
         getSymbolStack().push(methodName);
     }
 
-    private Stack<Address> getAddressStack() {
-        return generatorData.getSs();
-    }
-
-    private Stack<String> getSymbolStack() {
-        return generatorData.getSymbolStack();
-    }
-
     //    public void spid(Token next){
 //        getSymbolStack().push(next.value);
 //    }
@@ -229,10 +213,6 @@ public class CodeGenerator {
         getCallStack().push(methodName);
 
         //getSymbolStack().push(methodName);
-    }
-
-    private Stack<String> getCallStack() {
-        return generatorData.getCallStack();
     }
 
     public void call() {
@@ -478,10 +458,6 @@ public class CodeGenerator {
         //getSymbolStack().pop();
     }
 
-    private SymbolTable getSymbolTable() {
-        return generatorData.getSymbolTable();
-    }
-
     public void defParam() {
         //TODO : call Ok
         getAddressStack().pop();
@@ -505,5 +481,29 @@ public class CodeGenerator {
 
     public void main() {
 
+    }
+
+    private SymbolTable getSymbolTable() {
+        return generatorData.getSymbolTable();
+    }
+
+    private Stack<String> getCallStack() {
+        return generatorData.getCallStack();
+    }
+
+    private Stack<Address> getAddressStack() {
+        return generatorData.getSs();
+    }
+
+    private Stack<String> getSymbolStack() {
+        return generatorData.getSymbolStack();
+    }
+
+    private Memory getMemory() {
+        return generatorData.getMemory();
+    }
+
+    public void printMemory() {
+        getMemory().pintCodeBlock();
     }
 }
