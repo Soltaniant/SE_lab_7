@@ -6,7 +6,6 @@ import MiniJava.scanner.token.Token;
 import MiniJava.semantic.symbol.Symbol;
 import MiniJava.semantic.symbol.SymbolTable;
 import MiniJava.semantic.symbol.SymbolType;
-import lombok.Getter;
 
 import java.util.Stack;
 
@@ -477,10 +476,6 @@ public class CodeGenerator {
 
     public void lastTypeInt() {
         getSymbolTable().setLastType(SymbolType.Int);
-    }
-
-    public void main() {
-
     }
 
     private SymbolTable getSymbolTable() {
