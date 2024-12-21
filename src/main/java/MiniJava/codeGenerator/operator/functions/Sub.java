@@ -1,23 +1,22 @@
 package MiniJava.codeGenerator.operator.functions;
 
-import MiniJava.codeGenerator.Address;
-import MiniJava.codeGenerator.CodeGeneratorData;
-import MiniJava.codeGenerator.Operation;
+import MiniJava.codeGenerator.*;
 import MiniJava.codeGenerator.operator.Operator;
-import MiniJava.codeGenerator.varType;
 import MiniJava.errorHandler.ErrorHandler;
 
 public class Sub implements Operator {
 
     @Override
     public void operate(CodeGeneratorData data) {
-        Address temp = new Address(data.getMemory().getTemp(), varType.Int);
+        Memory memory = data.getMemory();
+        Address temp = new Address(memory.getTemp(), varType.Int);
+        memory.updateTempIndex();
         Address s2 = data.getAddressStack().pop();
         Address s1 = data.getAddressStack().pop();
         if (s1.varType != varType.Int || s2.varType != varType.Int) {
             ErrorHandler.printError("In sub two operands must be integer");
         }
-        data.getMemory().add3AddressCode(Operation.SUB, s1, s2, temp);
+        memory.add3AddressCode(Operation.SUB, s1, s2, temp);
         data.getAddressStack().push(temp);
     }
 
