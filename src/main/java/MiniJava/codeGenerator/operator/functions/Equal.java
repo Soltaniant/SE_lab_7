@@ -7,7 +7,7 @@ import MiniJava.errorHandler.ErrorHandler;
 public class Equal implements Operator {
     @Override
     public void operate(CodeGeneratorData data) {
-        Memory memory = data.getMemory();
+        MemoryFacade memory = data.getMemory();
         Address temp = new Address(memory.getTemp(), varType.Bool);
         memory.updateTempIndex();
         Address s2 = data.getAddressStack().pop();

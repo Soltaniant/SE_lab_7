@@ -10,7 +10,7 @@ import java.util.Stack;
 @Getter
 public class CodeGeneratorData {
 
-    private final Memory memory = new Memory();
+    private final MemoryFacade memory = new MemoryFacade();
     private final Stack<Address> addressStack = new Stack<>();
     private final Stack<String> symbolStack = new Stack<>();
     private final Stack<String> callStack = new Stack<>();

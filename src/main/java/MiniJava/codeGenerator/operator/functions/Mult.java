@@ -8,7 +8,7 @@ public class Mult implements Operator {
 
     @Override
     public void operate(CodeGeneratorData data) {
-        Memory memory = data.getMemory();
+        MemoryFacade memory = data.getMemory();
         Address temp = new Address(memory.getTemp(), varType.Int);
         memory.updateTempIndex();
         Address s2 = data.getAddressStack().pop();

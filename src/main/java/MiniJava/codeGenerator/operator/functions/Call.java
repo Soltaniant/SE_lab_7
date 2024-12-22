@@ -23,7 +23,7 @@ public class Call implements Operator {
                 t = varType.Bool;
                 break;
         }
-        Memory memory = data.getMemory();
+        MemoryFacade memory = data.getMemory();
         Address temp = new Address(memory.getTemp(), t);
         memory.updateTempIndex();
         data.getAddressStack().push(temp);
