@@ -26,3 +26,19 @@
 # 6: Facade
 برای انجام `Facade` از دو کلاس Parser و Memory استفاده می‌کنیم. کلاس Parser برای پیاده‌سازی Facade مناسب است، زیرا این کلاس از چندین سیستم و عملیات پیچیده استفاده می‌کند که می‌توانند در یک رابط ساده‌تر و یکپارچه توسط یک `Facade` مدیریت شوند. این سیستم‌های پیچیده شامل اجزای مختلفی هستند که در صورتی که کاربر بخواهد به‌طور مستقیم از آن‌ها استفاده کند، پیچیدگی زیادی را به دنبال خواهند داشت. 
 کلاس Memory نیز برای ایجاد یک `Facade` مناسب‌ است به این دلیل که این کلاس بیشتر با داده‌ها و آدرس‌ها سر و کار دارد و شامل عملیات‌هایی است که می‌توان آن‌ها را در یک `Facade` ساده و یکپارچه‌سازی شده قرار داد. 
+
+
+# add plugin
+برای اضافه کردن formatter-plugin باید طبق توضیحات داده شده از تکه کد 
+
+```
+      <plugin>
+        <groupId>net.revelc.code.formatter</groupId>
+        <artifactId>formatter-maven-plugin</artifactId>
+        <version>2.24.2-SNAPSHOT</version>
+      </plugin>
+```
+
+استفاده می‌کردیم اما با ارور `Unresolved plugin: 'net.revelc.code.formatter:formatter-maven-plugin:2.14.1'` روبرو شدیم که به این دلییل بود که پلاگین formatter-maven-plugin در نسخه 2.14.1 از گروه net.revelc.code.formatter به طور رسمی در مخزن Maven موجود نیست یا در دسترس نمی‌باشد. به همین دلیل به استفاده از یک پلاگین جایگزین روی آوردیم. از پلاگین spotless-maven-plugin استفاده کردیم که در این پلاگین با استفاده از دستور `mvn spotless:apply` می‌توان کد را فرمت کرد. نتیجه فرمت کد را در تصویر زیر مشاهده می‌کنید:
+
+![Screenshot 2024-12-23 020406](https://github.com/user-attachments/assets/5bf1cf1e-365a-4282-a875-3d3dd82ef67c)
