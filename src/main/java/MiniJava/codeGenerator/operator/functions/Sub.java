@@ -16,7 +16,7 @@ public class Sub implements Operator {
         if (s1.varType != varType.Int || s2.varType != varType.Int) {
             ErrorHandler.printError("In sub two operands must be integer");
         }
-        memory.add3AddressCode(Operation.SUB, s1, s2, temp);
+        memory.add3AddressCode(data.getAddressStack().pop().num, Operation.SUB, s1, s2, temp);
         data.getAddressStack().push(temp);
     }
 

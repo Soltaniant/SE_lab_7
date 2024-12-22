@@ -15,7 +15,7 @@ public class Equal implements Operator {
         if (s1.varType != s2.varType) {
             ErrorHandler.printError("The type of operands in equal operator is different");
         }
-        memory.add3AddressCode(Operation.EQ, s1, s2, temp);
+        memory.add3AddressCode(data.getAddressStack().pop().num, Operation.EQ, s1, s2, temp);
         data.getAddressStack().push(temp);
     }
 

@@ -27,9 +27,9 @@ public class Call implements Operator {
         Address temp = new Address(memory.getTemp(), t);
         memory.updateTempIndex();
         data.getAddressStack().push(temp);
-        memory.add3AddressCode(Operation.ASSIGN, new Address(temp.num, varType.Address, TypeAddress.Imidiate), new Address(data.getSymbolTable().getMethodReturnAddress(className, methodName), varType.Address), null);
-        memory.add3AddressCode(Operation.ASSIGN, new Address(memory.getCurrentCodeBlockAddress() + 2, varType.Address, TypeAddress.Imidiate), new Address(data.getSymbolTable().getMethodCallerAddress(className, methodName), varType.Address), null);
-        memory.add3AddressCode(Operation.JP, new Address(data.getSymbolTable().getMethodAddress(className, methodName), varType.Address), null, null);
+        memory.add3AddressCode(data.getAddressStack().pop().num, Operation.ASSIGN, new Address(temp.num, varType.Address, TypeAddress.Imidiate), new Address(data.getSymbolTable().getMethodReturnAddress(className, methodName), varType.Address), null);
+        memory.add3AddressCode(data.getAddressStack().pop().num, Operation.ASSIGN, new Address(memory.getCurrentCodeBlockAddress() + 2, varType.Address, TypeAddress.Imidiate), new Address(data.getSymbolTable().getMethodCallerAddress(className, methodName), varType.Address), null);
+        memory.add3AddressCode(data.getAddressStack().pop().num, Operation.JP, new Address(data.getSymbolTable().getMethodAddress(className, methodName), varType.Address), null, null);
 
     }
 

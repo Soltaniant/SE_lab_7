@@ -22,8 +22,8 @@ public class MethodReturn implements Operator {
         if (s.varType != temp) {
             ErrorHandler.printError("The type of method and return address was not match");
         }
-        data.getMemory().add3AddressCode(Operation.ASSIGN, s, new Address(data.getSymbolTable().getMethodReturnAddress(data.getSymbolStack().peek(), methodName), varType.Address, TypeAddress.Indirect), null);
-        data.getMemory().add3AddressCode(Operation.JP, new Address(data.getSymbolTable().getMethodCallerAddress(data.getSymbolStack().peek(), methodName), varType.Address), null, null);
+        data.getMemory().add3AddressCode(data.getAddressStack().pop().num, Operation.ASSIGN, s, new Address(data.getSymbolTable().getMethodReturnAddress(data.getSymbolStack().peek(), methodName), varType.Address, TypeAddress.Indirect), null);
+        data.getMemory().add3AddressCode(data.getAddressStack().pop().num, Operation.JP, new Address(data.getSymbolTable().getMethodCallerAddress(data.getSymbolStack().peek(), methodName), varType.Address), null, null);
     }
 
     @Override

@@ -15,7 +15,7 @@ public class Not implements Operator {
         if (s1.varType != varType.Bool) {
             ErrorHandler.printError("In not operator the operand must be boolean");
         }
-        memory.add3AddressCode(Operation.NOT, s1, s2, temp);
+        memory.add3AddressCode(data.getAddressStack().pop().num, Operation.NOT, s1, s2, temp);
         data.getAddressStack().push(temp);
     }
 

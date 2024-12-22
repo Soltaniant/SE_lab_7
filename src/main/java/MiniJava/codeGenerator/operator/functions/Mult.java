@@ -16,7 +16,7 @@ public class Mult implements Operator {
         if (s1.varType != varType.Int || s2.varType != varType.Int) {
             ErrorHandler.printError("In mult two operands must be integer");
         }
-        memory.add3AddressCode(Operation.MULT, s1, s2, temp);
+        memory.add3AddressCode(data.getAddressStack().pop().num, Operation.MULT, s1, s2, temp);
         data.getAddressStack().push(temp);
     }
 

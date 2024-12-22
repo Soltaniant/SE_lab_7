@@ -12,7 +12,7 @@ public class MemoryFacade {
     }
 
     // متدی برای افزودن کد سه آدرسی
-    public void add3AddressCode(Operation op, Address opr1, Address opr2, Address opr3) {
+    public void add3AddressCode(int num, Operation op, Address opr1, Address opr2, Address opr3) {
         memory.add3AddressCode(op, opr1, opr2, opr3);
     }
 
@@ -52,7 +52,7 @@ public class MemoryFacade {
     }
 
     // متدی برای چاپ بلوک‌های کد
-    public void printCodeBlock() {
+    public void pintCodeBlock() {
         memory.pintCodeBlock();
     }
 }

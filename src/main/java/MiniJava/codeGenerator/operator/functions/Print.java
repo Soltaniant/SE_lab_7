@@ -7,7 +7,7 @@ import MiniJava.codeGenerator.operator.Operator;
 public class Print implements Operator {
     @Override
     public void operate(CodeGeneratorData data) {
-        data.getMemory().add3AddressCode(Operation.PRINT, data.getAddressStack().pop(), null, null);
+        data.getMemory().add3AddressCode(data.getAddressStack().pop().num, Operation.PRINT, data.getAddressStack().pop(), null, null);
     }
 
     @Override

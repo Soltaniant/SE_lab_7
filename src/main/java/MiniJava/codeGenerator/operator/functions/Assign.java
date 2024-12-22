@@ -16,7 +16,7 @@ public class Assign implements Operator {
             ErrorHandler.printError("The type of operands in assign is different ");
         }
 
-        data.getMemory().add3AddressCode(Operation.ASSIGN, s1, s2, null);
+        data.getMemory().add3AddressCode(data.getAddressStack().pop().num, Operation.ASSIGN, s1, s2, null);
     }
 
     @Override

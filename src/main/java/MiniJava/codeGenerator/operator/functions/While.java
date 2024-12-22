@@ -11,7 +11,7 @@ public class While implements Operator {
     @Override
     public void operate(CodeGeneratorData data) {
         data.getMemory().add3AddressCode(data.getAddressStack().pop().num, Operation.JPF, data.getAddressStack().pop(), new Address(data.getMemory().getCurrentCodeBlockAddress() + 1, varType.Address), null);
-        data.getMemory().add3AddressCode(Operation.JP, data.getAddressStack().pop(), null, null);
+        data.getMemory().add3AddressCode(data.getAddressStack().pop().num, Operation.JP, data.getAddressStack().pop(), null, null);
     }
 
     @Override

@@ -15,7 +15,7 @@ public class LessThan implements Operator {
         if (s1.varType != varType.Int || s2.varType != varType.Int) {
             ErrorHandler.printError("The type of operands in less than operator is different");
         }
-        memory.add3AddressCode(Operation.LT, s1, s2, temp);
+        memory.add3AddressCode(data.getAddressStack().pop().num, Operation.LT, s1, s2, temp);
         data.getAddressStack().push(temp);
     }
 

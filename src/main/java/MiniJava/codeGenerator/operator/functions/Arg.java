@@ -28,7 +28,7 @@ public class Arg implements Operator {
             if (param.varType != t) {
                 ErrorHandler.printError("The argument type isn't match");
             }
-            data.getMemory().add3AddressCode(Operation.ASSIGN, param, new Address(s.address, t), null);
+            data.getMemory().add3AddressCode(data.getAddressStack().pop().num, Operation.ASSIGN, param, new Address(s.address, t), null);
 
         } catch (IndexOutOfBoundsException e) {
             ErrorHandler.printError("Too many arguments pass for method");

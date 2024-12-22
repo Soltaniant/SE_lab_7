@@ -15,7 +15,7 @@ public class And implements Operator {
         if (s1.varType != varType.Bool || s2.varType != varType.Bool) {
             ErrorHandler.printError("In and operator the operands must be boolean");
         }
-        memory.add3AddressCode(Operation.AND, s1, s2, temp);
+        memory.add3AddressCode(data.getAddressStack().pop().num, Operation.AND, s1, s2, temp);
         data.getAddressStack().push(temp);
     }
 
