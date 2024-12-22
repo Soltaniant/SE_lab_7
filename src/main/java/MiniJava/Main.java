@@ -4,11 +4,12 @@ import java.io.IOException;
 import MiniJava.errorHandler.ErrorHandler;
 import MiniJava.filereader.FileReader;
 import MiniJava.parser.Parser;
+import MiniJava.parser.ParserFacade;
 
 
 public class Main {
     public static void main(String[] args) {
-        Parser parser = new Parser();
+        ParserFacade parser = new ParserFacade();
         try {
             // start parsing
             parser.startParse(FileReader.readAsString("code"));
