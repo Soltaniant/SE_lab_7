@@ -283,3 +283,24 @@ if len(sys.argv) < 3:
     print("Usage: python clex.py <input_file> <output_file>")
     sys.exit(1)
 ```
+
+## Question #5:
+
+### What the Formatter Plugin Does:
+
+The _formatter plugin_ automatically formats the source code to ensure it adheres to a specified style guide (e.g., indentation, line breaks, spacing, etc.). It enforces consistent code formatting across the project.
+
+For example, the Maven-based [Formatter Plugin](https://code.revelc.net/formatter-maven-plugin/) integrates tools like _Eclipse Code Formatter_ to standardize formatting rules.
+
+### Why It Can Be Helpful:
+
+- Ensures _consistent code style_ across the team, reducing discrepancies caused by different developers’ IDE settings.
+- Saves time by automating formatting instead of manually fixing style issues.
+- Improves _readability_ and _maintainability_ of the code.
+- Makes code reviews more efficient by focusing on logic rather than formatting.
+
+### Relationship with Code Refactoring:
+
+- Refactoring improves the _structure and design_ of the code without altering functionality, whereas the formatter improves its _visual presentation_ and _style._
+- After performing refactoring, running the formatter ensures the code adheres to the project's style guidelines.
+- Together, refactoring and formatting enhance code _cleanliness_ and _readability_, making it easier to maintain and extend.
