@@ -39,6 +39,6 @@
       </plugin>
 ```
 
-استفاده می‌کردیم اما با ارور `Unresolved plugin: 'net.revelc.code.formatter:formatter-maven-plugin:2.14.1'` روبرو شدیم که به این دلییل بود که پلاگین formatter-maven-plugin در نسخه 2.14.1 از گروه net.revelc.code.formatter به طور رسمی در مخزن Maven موجود نیست یا در دسترس نمی‌باشد. به همین دلیل به استفاده از یک پلاگین جایگزین روی آوردیم. از پلاگین spotless-maven-plugin استفاده کردیم که در این پلاگین با استفاده از دستور `mvn spotless:apply` می‌توان کد را فرمت کرد. نتیجه فرمت کد را در تصویر زیر مشاهده می‌کنید:
+استفاده می‌کردیم اما با ارور `Unresolved plugin: 'net.revelc.code.formatter:formatter-maven-plugin:2.14.1'` روبرو شدیم که به این دلیل بود که پلاگین formatter-maven-plugin در نسخه 2.14.1 از گروه net.revelc.code.formatter به طور رسمی در مخزن Maven موجود نیست یا در دسترس نمی‌باشد. به همین دلیل به استفاده از یک پلاگین جایگزین روی آوردیم. از پلاگین spotless-maven-plugin استفاده کردیم که در این پلاگین با استفاده از دستور `mvn spotless:apply` می‌توان کد را فرمت کرد. نتیجه فرمت کد را در تصویر زیر مشاهده می‌کنید:
 
 ![Screenshot 2024-12-23 020406](https://github.com/user-attachments/assets/5bf1cf1e-365a-4282-a875-3d3dd82ef67c)
