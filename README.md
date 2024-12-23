@@ -1,5 +1,7 @@
 # lab 7
 
+---
+
 # 1: Use Polymorphism
 
 کلاس `CodeGenerator` دارای یک switchCase بسیار بزرگ است که به وضوح به نقض اصل Open-Closed پرداخته است. حال آنکه می‌توان به جای اینکه رفتار مورد نظر را بر اساس نوع تابع و از طریق این switchCase فراخوانی کرد، می‌توان از رویکرد polymorphic استفاده کرده و آن را در قالب کلاس‌های مجزا تحت عنوان Operator انجام دهیم.
@@ -49,7 +51,7 @@
 
 ---
 
-# Answers of the additional question:
+# Answers of the additional questions:
 
 ## Question #1:
 
@@ -64,3 +66,41 @@ The cost of fixing shortcuts or suboptimal solutions implemented for quick deliv
 ### Code Smells:
 
 Symptoms in the code that indicate potential issues or poor design, suggesting the need for refactoring.
+
+## Question #2:
+
+### Bloaters:
+
+These are code smells caused by excessive growth of code elements like classes, methods, or parameter lists. They make the code harder to manage and understand over time. Examples include _Long Method, Large Class, and Primitive Obsession._
+
+### Object-Orientation Abusers:
+
+These smells arise when object-oriented programming principles are incorrectly applied, resulting in inefficient or flawed designs. Examples include _Switch Statements, Refused Bequest, and Temporary Field._
+
+### Change Preventers:
+
+These smells indicate that modifying one part of the code requires multiple related changes in other places, increasing complexity and cost of development. Examples include _Divergent Change and Shotgun Surgery._
+
+### Dispensables:
+
+These are unnecessary or redundant parts of the code that, when removed, improve readability and maintainability. Examples include _Duplicate Code, Comments, Dead Code, and Lazy Class._
+
+### Couplers:
+
+These smells occur due to excessive coupling (dependency) between classes or components, making the system tightly bound and harder to modify. Examples include _Feature Envy, Message Chains, and Middle Man._
+
+## Question #3:
+
+### Category:
+
+The Lazy Class code smell belongs to the _Dispensables_ category.
+
+### Suggested Refactorings:
+
+- Inline Class: If the Lazy Class does not have enough functionality, move its code into another related class and delete the Lazy Class.
+- Collapse Hierarchy: If the Lazy Class is part of a hierarchy but provides minimal value, merge it with its parent or child class.
+
+### When to Ignore This Smell:
+
+- If the Lazy Class is expected to grow with additional functionality in the near future.
+- If the class, although small, improves code readability, maintainability, or separation of concerns.
